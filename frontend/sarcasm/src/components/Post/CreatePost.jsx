@@ -19,6 +19,17 @@ const CreatePost = () => {
       return;
     }
 
+    if(comment.trim().length>350){
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Character limit exceed..350 characters only.",
+       
+
+      });
+      return ;
+    }
+
     const postData = { "post_content": comment };
     const url = "http://192.168.20.21:8000/api/posts/";
 
