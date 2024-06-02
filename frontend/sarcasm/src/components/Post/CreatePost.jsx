@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Swal from 'sweetalert2';
+import Filter from 'bad-words';
+
 
 const CreatePost = () => {
   const [comment, setComment] = useState('');
+  const [sentiment, setSentiment] = useState(null);
 
   const handleFormSubmit = (e) => {
     e.preventDefault(); // Prevent the default form submission
-    
+
     // Validate the comment
     if (comment.trim() === '') {
       Swal.fire({
@@ -19,26 +22,38 @@ const CreatePost = () => {
       return;
     }
 
-    if(comment.trim().length>350){
+    if(comment.trim().length > 350){
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Character limit exceed..350 characters only.",
-       
-
+        text: "Character limit exceeded. 350 characters only.",
       });
-      return ;
+      return;
     }
 
+    // Check for slang words
+    const filter = new Filter();
+    if (filter.isProfane(comment)) {
+      Swal.fire({
+        title: 'Warning!',
+        text: 'The comment contains inappropriate language.',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
+
+
+    // Proceed with posting the comment
     const postData = { "post_content": comment };
     const url = "http://192.168.20.21:8000/api/posts/";
 
     fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(postData),
+      body: JSON.stringify(postData)
     })
     .then(response => response.json())
     .then(data => {
@@ -86,20 +101,20 @@ const CreatePost = () => {
       <form onSubmit={handleFormSubmit} className="w-50">
         <div className="form-group">
           <label htmlFor="opinion">
-            <h1 className="c-primary">Write your opinion anonymonusly</h1>
+            <h1 className="c-primary">Write your opinion anonymously</h1>
             <hr />
           </label>
           <div style={{ position: 'relative', width: '100%', maxWidth: '600px', margin: '0 auto' }}>
             <textarea
-            className="form-control"
-            id="opinion"
-            rows="3"
-            style={textareaStyle}
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-      ></textarea>
-      <div style={counterStyle}>{comment.length} / 350</div>
-    </div>
+              className="form-control"
+              id="opinion"
+              rows="3"
+              style={textareaStyle}
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            ></textarea>
+            <div style={counterStyle}>{comment.length} / 350</div>
+          </div>
         </div>
         <div className="d-flex justify-content-center mt-3">
           <input className="btn btn-primary btn-lg w-20" type="submit" value="Post" />
