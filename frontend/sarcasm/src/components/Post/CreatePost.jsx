@@ -62,6 +62,25 @@ const CreatePost = () => {
     });
   };
 
+  const textareaStyle = {
+    backgroundColor: '#2b3a52',
+    color: '#d6d663',
+    width: '100%',
+    height: '150px', // Fixed height
+    boxSizing: 'border-box',
+    resize: 'none', // Prevent resizing
+    padding: '10px', // Add some padding
+    position: 'relative' // Ensure relative positioning for the counter
+  };
+
+  const counterStyle = {
+    position: 'absolute',
+    bottom: '10px', // Adjust as needed
+    right: '10px', // Adjust as needed
+    color: '#d6d663',
+    fontSize: '12px' // Adjust as needed
+  };
+
   return (
     <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
       <form onSubmit={handleFormSubmit} className="w-50">
@@ -70,14 +89,17 @@ const CreatePost = () => {
             <h1 className="c-primary">Write your opinion anonymonusly</h1>
             <hr />
           </label>
-          <textarea
+          <div style={{ position: 'relative', width: '100%', maxWidth: '600px', margin: '0 auto' }}>
+            <textarea
             className="form-control"
             id="opinion"
             rows="3"
-            style={{ backgroundColor: '#2b3a52', color: '#d6d663' }}
+            style={textareaStyle}
             value={comment}
             onChange={(e) => setComment(e.target.value)}
-          ></textarea>
+      ></textarea>
+      <div style={counterStyle}>{comment.length} / 350</div>
+    </div>
         </div>
         <div className="d-flex justify-content-center mt-3">
           <input className="btn btn-primary btn-lg w-20" type="submit" value="Post" />
