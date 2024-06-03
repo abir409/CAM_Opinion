@@ -94,7 +94,13 @@
 
 
 .sentiment-text{
-    position:absolute;
+    position: absolute;
     top: 0;
     right: 10px;
+    background: rgba(0, 0, 0, 0.7); 
+    color: white; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    font-weight: bold;
 }
