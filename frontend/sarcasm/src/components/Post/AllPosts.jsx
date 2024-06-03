@@ -22,7 +22,7 @@ const AllPosts = () => {
       <dir className="container">
         <h1>Public Post</h1>
         <hr />
-        <div className='row justify-content-center'>
+        <div className='row'>
            {apiData.length > 0 ? (
             apiData.map((post) => (
               <Posts key={post.id} post={post} />
