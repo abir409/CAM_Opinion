@@ -1,11 +1,19 @@
 from rest_framework import serializers
-from api.models import Post
+from django.core.validators import MaxLengthValidator
+from api.models import Post,Comment
 
 class PostSerializer(serializers.ModelSerializer):
+
+    post_content = serializers.CharField(
+        validators=[MaxLengthValidator(350, message="Character limit exceeded. Maximum 350 characters allowed.")]
+    )
+
     class Meta:
         model=Post
-        fields=['id','post_content']
+        fields=['id','post_content','created_at']
 
-    
-    # def create(self, validated_data):
-    #     return Post.objects.create(**validated_data)
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ['id', 'post', 'comment_content', 'created_at']

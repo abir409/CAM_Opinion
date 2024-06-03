@@ -20,15 +20,15 @@ const AllPosts = () => {
 
     <>
       <dir className="container">
-        <h1>Public Post</h1>
-        <hr />
+        <h1>Leads Public Wall</h1>
+        <hr className='w-50 ml-0' />
         <div className='row'>
            {apiData.length > 0 ? (
             apiData.map((post) => (
               <Posts key={post.id} post={post} />
             ))
           ) : (
-            <p>No posts available</p>
+            <p className='well'>No posts available</p>
           )}
         </div>
       </dir>
