@@ -5,6 +5,7 @@
 
 .navbar-custom .btn {
     background: linear-gradient(45deg, #6e2bff, #ff416c) !important; 
+    color: white;
     border: none;
     margin-right: 20px;
     border-radius: 5px;
@@ -21,7 +22,6 @@
 
 .navbar-custom .btn:hover {
     background: linear-gradient(45deg, #41b3ff, #dfff2b) !important;
-    color: white;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
