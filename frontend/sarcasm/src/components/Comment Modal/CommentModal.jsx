@@ -17,11 +17,11 @@ function CommentModal({ show, onHide, test }) {
         
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onHide}>
+        <Button variant="danger" onClick={onHide}>
           Close
         </Button>
         <Button variant="primary" onClick={onHide}>
-          Save Changes
+          Post
         </Button>
       </Modal.Footer>
     </Modal>

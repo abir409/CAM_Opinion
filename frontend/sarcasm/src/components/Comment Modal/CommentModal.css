@@ -1,17 +1,39 @@
 .comment-wrapper{
-    height: 100px;
+    height: 150px;
     margin: 0 !important;
     padding: 0 !important;
+    background-color: transparent;
+    border-radius: 10px !important;
 }
 .comment{
-    height: 100% !important;
+   
+    background-color: #2b3a52;
+    color: white;
+    height: 100%;
     width: 100%;
-    border: transparent;
-    resize: none;
+    box-sizing: border-box;
+    resize: none; 
+    padding: 10px; 
+    border: 1px solid white;
+    border-radius: 10px;
+    /* position: 'relative */
 }
 .comment:focus{
     outline: none !important
 }
+.modal-header{
+    border-bottom: none !important;
+}
+.modal-title{
+    border-bottom: #2b3a52!important;
+    color: white !important;
+}
 .modal-body{
-    padding: 1px !important;
+    border-bottom: none !important;
+}
+.modal-content{
+    background-color: #2b3a52 !important;
+}
+.modal-footer{
+    border-top: none !important;
 }
