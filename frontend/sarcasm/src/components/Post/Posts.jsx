@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import anonym from '../../images/anonym.png';
 import Sentiment from 'sentiment';
 import ReactTimeAgo from 'react-time-ago';
+import CommentModal from '../Comment Modal/CommentModal';
 
 const Posts = ({ post }) => {
     const [sentiment, setSentiment] = useState(null);
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     useEffect(() => {
         // Analyze sentiment using Sentiment.js
@@ -22,22 +26,6 @@ const Posts = ({ post }) => {
     }, [post.post_content]);
 
     return (
-
-        // <div className="col-md-4">
-        //   <div className="card-container">
-        //     <div className="card card-custom">
-
-        //       <div className="card-front card-body position-relative">
-        //         <p className="sentiment-text">{sentiment}</p>
-        //         <img src={anonymonus} alt="Card Image 1" />
-        //       </div>
-        //       <div className="card-back card-body">
-        //         <p className="card-text">{post.post_content}</p>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </div>
-
         <div className="col-md-6 mb-3">
             <div className="card">
                 <div className="row no-gutters">
@@ -55,8 +43,8 @@ const Posts = ({ post }) => {
                             <div className="card-footer">
                                 <p className="card-text mb-0"><small className="text-muted"><ReactTimeAgo date={post.created_at} locale="en-US" /></small></p>
                                 <div>
-                                    <button className="btn btn-light btn-sm">
-                                        <i className="fas fa-comment"></i>
+                                        <button className="btn btn-light btn-sm" onClick={()=><CommentModal show={show} handleShow={()=>{handleShow()}} Close={()=>{handleClose()}}/> }>
+                                        <i className="fas fa-comment" ></i>
                                     </button>
                                     <button className="btn btn-light btn-sm">
                                         <i className="fas fa-list"></i>
