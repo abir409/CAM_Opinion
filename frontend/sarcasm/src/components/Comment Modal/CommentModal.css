@@ -1,0 +1,17 @@
+.comment-wrapper{
+    height: 100px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.comment{
+    height: 100% !important;
+    width: 100%;
+    border: transparent;
+    resize: none;
+}
+.comment:focus{
+    outline: none !important
+}
+.modal-body{
+    padding: 1px !important;
+}

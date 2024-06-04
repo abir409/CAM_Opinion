@@ -1,14 +1,21 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import './CommentModal.css'
 
 function CommentModal({ show, onHide, test }) {
   console.log(test);
   return (
     <Modal show={show} onHide={onHide}>
       <Modal.Header closeButton>
-        <Modal.Title>Modal heading</Modal.Title>
+        <Modal.Title>Add Comment</Modal.Title>
       </Modal.Header>
-      <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+      <Modal.Body>
+        <div className='comment-wrapper'>
+        <textarea name="comment" className='comment'>
+        </textarea>
+        </div>
+        
+      </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onHide}>
           Close
