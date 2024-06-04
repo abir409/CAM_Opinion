@@ -6,9 +6,8 @@ import CommentModal from '../Comment Modal/CommentModal';
 
 const Posts = ({ post }) => {
     const [sentiment, setSentiment] = useState(null);
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const [showModal, setShowModal] = useState(false);
+
 
     useEffect(() => {
         // Analyze sentiment using Sentiment.js
@@ -24,6 +23,9 @@ const Posts = ({ post }) => {
         }
         setSentiment(sentimentType);
     }, [post.post_content]);
+
+    const handleShow = () => setShowModal(true);
+    const handleClose = () => setShowModal(false);
 
     return (
         <div className="col-md-6 mb-3">
@@ -43,7 +45,8 @@ const Posts = ({ post }) => {
                             <div className="card-footer">
                                 <p className="card-text mb-0"><small className="text-muted"><ReactTimeAgo date={post.created_at} locale="en-US" /></small></p>
                                 <div>
-                                        <button className="btn btn-light btn-sm" onClick={()=><CommentModal show={show} handleShow={()=>{handleShow()}} Close={()=>{handleClose()}}/> }>
+                                        <button className="btn btn-light btn-sm"
+                                        onClick={handleShow} >
                                         <i className="fas fa-comment" ></i>
                                     </button>
                                     <button className="btn btn-light btn-sm">
@@ -55,6 +58,9 @@ const Posts = ({ post }) => {
                     </div>
                 </div>
             </div>
+
+            <CommentModal show={showModal} onHide={handleClose} />
+
         </div>
 
     );
