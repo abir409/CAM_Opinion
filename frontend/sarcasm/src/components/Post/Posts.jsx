@@ -28,41 +28,27 @@ const Posts = ({ post }) => {
     const handleClose = () => setShowModal(false);
 
     return (
-        <div className="col-md-6 mb-3">
-            <div className="card">
-                <div className="row no-gutters">
-                    <div className="col-md-4">
-                        <div className="circle-img-wrapper">
-                            <img src={anonym} className="circle-img" alt="Image" />
-                        </div>
-                    </div>
-                    <div className="col-md-8">
-                        <div className="card-body">
-                            <div className="card-body-content">
-                                {/* <h5 className="card-title">Card Title</h5> */}
-                                <p className="card-text">{post.post_content}</p>
-                            </div>
-                            <div className="card-footer">
-                                <p className="card-text mb-0"><small className="text-muted"><ReactTimeAgo date={post.created_at} locale="en-US" /></small></p>
-                                <div>
-                                        <button className="btn btn-light btn-sm"
-                                        onClick={handleShow} >
-                                        <i className="fas fa-comment" ></i>
-                                    </button>
-                                    <button className="btn btn-light btn-sm">
-                                        <i className="fas fa-list"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="container mt-5">
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">
+                    {/* <img src={anonym} alt="Avatar"/> */}
+                </div>
+                <div class="comment-info">
+                    <div class="comment-username">@Anonymous</div>
+                    <div class="comment-time">2 years ago</div>
                 </div>
             </div>
+            <div class="comment-body">
+                lorem*50
 
-            <CommentModal show={showModal} onHide={handleClose} />
-
+            </div>
+            <div class="comment-actions">
+                <button class="comment-reply">Reply</button>
+            </div>
         </div>
-
+    </div>
+    
     );
 }
 
