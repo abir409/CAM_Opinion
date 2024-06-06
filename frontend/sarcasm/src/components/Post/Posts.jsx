@@ -28,23 +28,23 @@ const Posts = ({ post }) => {
     const handleClose = () => setShowModal(false);
 
     return (
-        <div class="container mt-5">
-        <div class="comment-card">
-            <div class="comment-header">
-                <div class="comment-avatar">
-                    {/* <img src={anonym} alt="Avatar"/> */}
+        <div className="container mt-5">
+        <div className="comment-card">
+            <div className="comment-header">
+                <div className="comment-avatar">
+                    <img src={anonym} alt="Avatar"/>
                 </div>
-                <div class="comment-info">
-                    <div class="comment-username">@Anonymous</div>
-                    <div class="comment-time">2 years ago</div>
+                <div className="comment-info">
+                    <div className="comment-username">@Anonymous</div>
+                    <div className="comment-time">2 years ago</div>
                 </div>
             </div>
-            <div class="comment-body">
+            <div className="comment-body">
                 lorem*50
 
             </div>
-            <div class="comment-actions">
-                <button class="comment-reply">Reply</button>
+            <div className="comment-actions">
+                <button className="comment-reply">Reply</button>
             </div>
         </div>
     </div>
