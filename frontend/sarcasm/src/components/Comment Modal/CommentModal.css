@@ -1,4 +1,4 @@
-.comment-wrapper{
+/* .comment-wrapper{
     height: 150px;
     margin: 0 !important;
     padding: 0 !important;
@@ -16,7 +16,7 @@
     padding: 10px; 
     border: 1px solid white;
     border-radius: 10px;
-    /* position: 'relative */
+    
 }
 .comment:focus{
     outline: none !important
@@ -36,4 +36,4 @@
 }
 .modal-footer{
     border-top: none !important;
-}
+} */
