@@ -17,3 +17,8 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'post', 'comment_content', 'created_at']
+
+        def create(self, validated_data):
+            post_id = self.context['view'].kwargs['postid']
+            validated_data['post'] = Post.objects.get(id=post_id)
+            return super().create(validated_data)

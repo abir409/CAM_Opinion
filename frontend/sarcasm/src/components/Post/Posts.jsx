@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import anonym from '../../images/anonym.png';
+import React, { useState, useEffect, useRef } from 'react';
+
 import Sentiment from 'sentiment';
-import ReactTimeAgo from 'react-time-ago';
+
 import CommentModal from '../Comment Modal/CommentModal';
+
+import PostCard from './PostCard';
 
 const Posts = ({ post }) => {
     const [sentiment, setSentiment] = useState(null);
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
 
 
     useEffect(() => {
@@ -24,31 +26,14 @@ const Posts = ({ post }) => {
         setSentiment(sentimentType);
     }, [post.post_content]);
 
-    const handleShow = () => setShowModal(true);
-    const handleClose = () => setShowModal(false);
+    // const handleShow = () => setShowModal(true);
+    // const handleClose = () => setShowModal(false);
 
     return (
         <div className="container mt-5">
-        <div className="comment-card">
-            <div className="comment-header">
-                <div className="comment-avatar">
-                    <img src={anonym} alt="Avatar"/>
-                </div>
-                <div className="comment-info">
-                    <div className="comment-username">@Anonymous</div>
-                    <div className="comment-time">2 years ago</div>
-                </div>
-            </div>
-            <div className="comment-body">
-                lorem*50
-
-            </div>
-            <div className="comment-actions">
-                <button className="comment-reply">Reply</button>
-            </div>
+            <PostCard post={post} />
         </div>
-    </div>
-    
+
     );
 }
 

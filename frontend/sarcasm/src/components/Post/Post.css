@@ -4,6 +4,7 @@
     margin: 10px 0;
     border-radius: 5px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #f5f7fa;
 }
 .comment-header {
     display: flex;
@@ -88,3 +89,31 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
     font-weight: bold;
 }
+
+.reply-input{
+    display: flex;
+    margin: 10px 0 0 55px;
+    gap: 10px;
+    
+}
+
+.reply-input img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+.reply-input textarea{
+    min-height: 29px; 
+    width: 50%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    resize: none;
+    background-color: transparent;
+    overflow: hidden;
+}
+.reply-input textarea:focus{
+    outline: none;
+}
+
+
