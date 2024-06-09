@@ -4,7 +4,9 @@ import Swal from 'sweetalert2';
 const PostCardReply = ({ id, img }) => {
     const textAreaRef = useRef(null);
     const [textAreaVal, setTextAreaVal] = useState("");
-    const [replies, setReplies] = useState([]); 
+    const [replies, setReplies] = useState([]);
+    const [showInput,setInput] = useState(false)
+    const [showHideReply, setShowHideReply] = useState(replies.length > 0)
 
     useEffect(() => {
         // fetch previous comments when the component mounts
@@ -19,9 +21,14 @@ const PostCardReply = ({ id, img }) => {
             });
     }, [id]);
 
-    const handleChange = (e) => {
-        setTextAreaVal(e.target.value);
+    const handleCancelButton = (e) => {
+        setTextAreaVal('');
+        setInput((prev) => !prev)
     };
+
+    // const hadleCancelButton = (e)={
+    //     set
+    // }
 
     useEffect(() => {
         textAreaRef.current.style.height = "auto";
@@ -52,8 +59,8 @@ const PostCardReply = ({ id, img }) => {
                     confirmButtonText: 'OK'
                 });
                 setTextAreaVal('');
-                
-                setReplies([data, ...replies]); 
+                setShowHideReply((val)=>true)
+                setReplies([data, ...replies]);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -68,21 +75,29 @@ const PostCardReply = ({ id, img }) => {
 
     return (
         <>
-            <div className='reply-input'>
-                <div className="reply-avatar">
-                    <img src={img} alt="Avatar" />
-                </div>
-                <textarea name="" id="" placeholder='Add a reply...' value={textAreaVal} onChange={handleChange} rows={1} ref={textAreaRef}></textarea>
-            </div>
             <div className="comment-actions">
-                <button className="comment-reply" value={id} onClick={handleReply}>Reply</button>
+                <button className="comment-reply" onClick={() => setInput((prev) => !prev)}>Reply</button>
             </div>
+            <div className={`reply-wrapper${showInput ?' reply-wrapper-show':''}`}>
+                <div className="reply-input">
+                    <div className="reply-avatar">
+                        <img src={img} alt="Avatar" />
+                    </div>
+                    <textarea name="" id="" placeholder='Add a reply...' value={textAreaVal} onChange={(e)=>setTextAreaVal(e.target.value)} rows={1} ref={textAreaRef}></textarea>
+                </div>
+                {/* setTextAreaVal(() => '') */}
+                <div className='reply-button mt-2 row justify-content-end'>
+                    <button className='btn btn-secondary btn-sm' onClick={handleCancelButton}  >Cancel</button>
+                    <button className={`btn btn-primary btn-sm ml-3 ${textAreaVal == '' ? ' disabled' : ''}`} value={id} onClick={textAreaVal== ''? null : handleReply}>Reply</button>
+                </div>
+            </div>
+
             {/* show comments of this post */}
-            <div>
-                {replies.length > 0 && <p>{replies.length} replies</p>} 
+            <div className='show-comment'>
+                {replies.length > 0 && <button className='view-comment' onClick={()=> setShowHideReply((val)=>!val)}>{replies.length} replies</button>}
                 {replies.map((reply, index) => (
-                    <div key={index}>
-                        <p>{reply.comment_content}</p>
+                    <div className={` ${showHideReply  ? '' : 'hide-comment' }`} key={index}>
+                        <div><img src={img} alt="anonym" /> {reply.comment_content}</div>
                     </div>
                 ))}
             </div>
