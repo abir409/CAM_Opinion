@@ -1,5 +1,7 @@
 
 import './App.css';
+import React, { useState, useEffect } from 'react'
+
 
 import {
   createBrowserRouter,
@@ -9,26 +11,51 @@ import {
 import AllPosts from './components/Post/AllPosts';
 import NavBar from './components/NavBar/NavBar';
 import CreatePost from './components/Post/CreatePost';
+import AgreementModal from './components/Agreement/AgreementModal';
 
 
 
 
 
 function App() {
-  const router=createBrowserRouter([
+  //agreement
+  
+  const [showTerms, setShowTerms] = useState(true);
+
+  useEffect(() => {
+    const hasAgreed = localStorage.getItem('hasAgreedToTerms');
+    console.log(hasAgreed)
+    if (hasAgreed) {
+      setShowTerms(false);
+    }
+  }, []);
+
+  //Routers
+  const router = createBrowserRouter([
     {
-      path:"/",
-      element:<><NavBar/> <AllPosts/> </>
+      path: "/",
+      element: <><NavBar /> <AllPosts /> </>
     },
     {
-      path:"/create-post",
-      element:<div><NavBar/><CreatePost/></div>
+      path: "/create-post",
+      element: <div><NavBar /><CreatePost /></div>
     }
   ])
+
+
+  if (!showTerms) {
+    return (
+      <>
+      <RouterProvider router={router} />
+      </>
+    );
+  }
+
+
+ 
   return (
     <>
-      <RouterProvider router={router} />
-
+            <AgreementModal setShowTerms={setShowTerms}/>
 
     </>
   );
