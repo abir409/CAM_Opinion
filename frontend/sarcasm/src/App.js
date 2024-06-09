@@ -42,7 +42,6 @@ function App() {
     }
   ])
 
-
   if (!showTerms) {
     return (
       <>
@@ -52,7 +51,6 @@ function App() {
   }
 
 
- 
   return (
     <>
             <AgreementModal setShowTerms={setShowTerms}/>

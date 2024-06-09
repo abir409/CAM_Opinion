@@ -21,7 +21,7 @@ class CommentList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         post_id = self.kwargs.get('postid')
-        return Comment.objects.filter(post_id=post_id).order_by('-id')
+        return Comment.objects.filter(post_id=post_id).order_by('id')
 
     def perform_create(self, serializer):
         post_id = self.kwargs.get('postid')
