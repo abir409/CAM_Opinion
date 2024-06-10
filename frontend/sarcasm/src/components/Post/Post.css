@@ -149,18 +149,19 @@
 .show-comment div div{
     font-size: 15px;
     margin-left: 20px;
+    position: relative;
 }
  .show-comment div div img{
     height: 15px;
     width: 15px;
-    
+    position: absolute;
+    top: 5px;
   }
 
   .view-comment{
     background: none;
     border: none;
     color: #065fd4;
-    padding: 0;
     cursor: pointer;
     
 }
@@ -171,3 +172,12 @@
     display: none;
  }
 
+ .show-comment div div{
+    position: relative;
+    margin-bottom: 5px;
+ }
+
+.show-comment div div div:nth-child(2){
+    word-wrap: break-word;
+    margin-left: 30px;
+}
