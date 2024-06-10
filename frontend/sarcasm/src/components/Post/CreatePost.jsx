@@ -86,7 +86,7 @@ const CreatePost = () => {
       <form onSubmit={handleFormSubmit} className="w-50">
         <div className="form-group">
           <label htmlFor="opinion">
-            <h1 className="c-primary">Write your opinion anonymonusly</h1>
+            <h1 className="c-primary">Write opinion anonymonusly</h1>
             <hr />
           </label>
           <div style={{ position: 'relative', width: '100%', maxWidth: '600px', margin: '0 auto' }}>
