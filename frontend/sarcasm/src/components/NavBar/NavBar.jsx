@@ -21,6 +21,7 @@ const NavBar = () => {
                 <div className="navbar-nav ml-auto">
                     <Link to={`/`} className="btn">Home</Link>
                     <Link to={`/create-post`} className="btn">Post</Link>
+                    <Link to={`/Aboutus`} className="btn">About us</Link>
                 </div>
             </div>
         </div>

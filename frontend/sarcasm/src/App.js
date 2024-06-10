@@ -12,6 +12,7 @@ import AllPosts from './components/Post/AllPosts';
 import NavBar from './components/NavBar/NavBar';
 import CreatePost from './components/Post/CreatePost';
 import AgreementModal from './components/Agreement/AgreementModal';
+import Aboutus from './components/AboutUs/Aboutus';
 
 
 
@@ -39,6 +40,10 @@ function App() {
     {
       path: "/create-post",
       element: <div><NavBar /><CreatePost /></div>
+    },
+    {
+      path: "/aboutus",
+      element: <div><NavBar /><Aboutus/></div>
     }
   ])
 
