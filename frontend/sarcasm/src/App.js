@@ -40,10 +40,6 @@ function App() {
     {
       path: "/create-post",
       element: <div><NavBar /><CreatePost /></div>
-    },
-    {
-      path: "/aboutus",
-      element: <div><NavBar /><Aboutus/></div>
     }
   ])
 
