@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Leads from '../../images/Leads_logo.png';
 
 const NavBar = () => {
+  const navRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (navRef.current && !navRef.current.contains(event.target)) {
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarToggler && navbarCollapse && navbarCollapse.classList.contains('show')) {
+        navbarToggler.click();
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div>
+    <div ref={navRef}>
       <nav className="navbar navbar-expand-lg navbar-custom">
         <div className="container">
           <Link to="/" className="navbar-brand">
