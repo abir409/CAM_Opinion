@@ -1,11 +1,14 @@
-
 .navbar-custom {
-  background-color: #fdfdff !important;
+  background-color: #ffffff !important;
   position: fixed !important; 
   top: 0; 
   width: 100%; 
-  z-index: 1000; /* Ensure it is above other content */
-  transition: background-color 0.3s !important; 
+  z-index: 1000; 
+}
+
+
+body {
+  padding-top: 70px !important; 
 }
 
 .navbar-custom .navbar-brand {
@@ -41,36 +44,22 @@
 }
 
 .navbar-toggler {
-  border: 1px solid rgb(0, 0, 0) !important;
+  border: 1px solid rgb(255, 254, 254) !important;
 }
 
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2855, 55, 55, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  background-color: rgb(0, 0, 0) !important;
-  height: 3px !important;
-  width: 3px !important;
-  display: block;
-}
-
-
-.navbar-custom .navbar-nav {
-  flex-direction: column;
-  align-items: center;
+  background-color: rgb(1, 158, 237) !important;
+  height: 2px !important;
+  width: 20px !important;
+  margin: 5px !important;
+  display: block !important;
 }
 
 @media (max-width: 576px) {
-  .navbar-custom {
-      position: relative; 
-      padding-top: 20px;
-  }
-
   .navbar-custom .btn {
       width: 100%;
       margin: 5px 0;
       padding: 10px;
-  }
-
-  body {
-      padding-top: 120px !important; 
   }
 }
