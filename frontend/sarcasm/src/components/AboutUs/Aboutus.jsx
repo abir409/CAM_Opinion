@@ -26,22 +26,22 @@ const Aboutus = () => {
                 <div className="col-md-3 text-center">
                     <img src={Jalis} alt="Developer 1" className="developer-img"/>
                     <div className="person-info">
-                        <h3>Jalis Mahamud Tarif</h3>
-                        <p>Desarrollador backend</p>
+                        <h5>Jalis Mahamud Tarif</h5>
+                        <p>Backend Developer</p>
                     </div>
                 </div>
                 <div className="col-md-3 text-center">
                     <img src={rony} alt="Developer 1" className="developer-img"/>
                     <div className="person-info">
-                        <h3>Rashed Khan Rony</h3>
-                        <p>Consultor Senior</p>
+                        <h5>Rashed Khan Rony</h5>
+                        <p>Senior Consultant</p>
                     </div>
                 </div>
                 <div className="col-md-3 text-center">
                     <img src={Zubaer} alt="Developer 2" className="developer-img"/>
                     <div className="person-info">
-                        <h3>Zubaer Ahmed</h3>
-                        <p>Desarrollador frontend</p>
+                        <h5>Zubaer Ahmed</h5>
+                        <p>Frontend Developer</p>
                     </div>
                 </div>
             </div>
@@ -49,15 +49,15 @@ const Aboutus = () => {
                 <div className="col-md-3 text-center">
                     <img src={Shakil} alt="Developer 3" className="developer-img"/>
                     <div className="person-info">
-                        <h3>Sarah Williams</h3>
-                        <p>Desarrollador backend</p>
+                        <h5>Sarah Williams</h5>
+                        <p>Backend Developer</p>
                     </div>
                 </div>
                 <div className="col-md-3 text-center">
                     <img src={abir} alt="Developer 4" className="developer-img"/>
                     <div className="person-info">
-                        <h3>Md Mahabubul Alam Abir</h3>
-                        <p>Desarrollador de pila completa</p>
+                        <h5>Md Mahabubul Alam Abir</h5>
+                        <p>Full Stack Developer</p>
                     </div>
                 </div>
             </div>
