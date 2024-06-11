@@ -49,7 +49,7 @@ const Aboutus = () => {
                 <div className="col-md-3 text-center">
                     <img src={Shakil} alt="Developer 3" className="developer-img"/>
                     <div className="person-info">
-                        <h5>Abdus Shakil Chowdhury</h5>
+                        <h5>Sarah Williams Chowdhury</h5>
                         <p>Backend Developer</p>
                     </div>
                 </div>
