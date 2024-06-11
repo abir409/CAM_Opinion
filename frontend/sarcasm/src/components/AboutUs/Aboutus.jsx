@@ -27,21 +27,21 @@ const Aboutus = () => {
                     <img src={Jalis} alt="Developer 1" className="developer-img"/>
                     <div className="person-info">
                         <h3>Jalis Mahamud Tarif</h3>
-                        <p>Backend Developer</p>
+                        <p>Desarrollador backend</p>
                     </div>
                 </div>
                 <div className="col-md-3 text-center">
                     <img src={rony} alt="Developer 1" className="developer-img"/>
                     <div className="person-info">
                         <h3>Rashed Khan Rony</h3>
-                        <p>Senior Consultant</p>
+                        <p>Consultor Senior</p>
                     </div>
                 </div>
                 <div className="col-md-3 text-center">
                     <img src={Zubaer} alt="Developer 2" className="developer-img"/>
                     <div className="person-info">
                         <h3>Zubaer Ahmed</h3>
-                        <p>Frontend Developer</p>
+                        <p>Desarrollador frontend</p>
                     </div>
                 </div>
             </div>
@@ -50,14 +50,14 @@ const Aboutus = () => {
                     <img src={Shakil} alt="Developer 3" className="developer-img"/>
                     <div className="person-info">
                         <h3>Sarah Williams</h3>
-                        <p>Backend Developer</p>
+                        <p>Desarrollador backend</p>
                     </div>
                 </div>
                 <div className="col-md-3 text-center">
                     <img src={abir} alt="Developer 4" className="developer-img"/>
                     <div className="person-info">
                         <h3>Md Mahabubul Alam Abir</h3>
-                        <p>Full Stack Developer</p>
+                        <p>Desarrollador de pila completa</p>
                     </div>
                 </div>
             </div>
