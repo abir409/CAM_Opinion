@@ -15,9 +15,6 @@ import AgreementModal from './components/Agreement/AgreementModal';
 import Aboutus from './components/AboutUs/Aboutus';
 
 
-
-
-
 function App() {
   //agreement
   
@@ -25,7 +22,7 @@ function App() {
 
   useEffect(() => {
     const hasAgreed = localStorage.getItem('hasAgreedToTerms');
-    console.log(hasAgreed)
+   
     if (hasAgreed) {
       setShowTerms(false);
     }
@@ -40,6 +37,10 @@ function App() {
     {
       path: "/create-post",
       element: <div><NavBar /><CreatePost /></div>
+    },
+    {
+      path:"/aboutus",
+      element: <div><NavBar /><Aboutus /></div>
     }
   ])
 
